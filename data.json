@@ -1,0 +1,96 @@
+{
+    "rasa_nlu_data": {
+        "common_examples": [
+    {
+        "text": "Hi there!",
+        "intent": "greet",
+        "entities": [
+        ]
+    },
+    {
+        "text": "Hello!",
+        "intent": "greet",
+        "entities": []
+    },
+    {
+        "text": "Goodbye!",
+        "intent": "goodbye",
+        "entities": []
+    },
+    {
+        "text": "What is my account balance?",
+        "intent": "check_balance",
+        "entities": [{
+                "start": 31,
+                "end": 38,
+                "value": "12345",
+                "entity": "account_number"
+            }]
+    },
+    {
+        "text": "Can you tell me my account balance?",
+        "intent": "check_balance",
+        "entities": [{
+                "start": 31,
+                "end": 38,
+                "value": "12345",
+                "entity": "account_number"
+            }]
+    },
+    {
+        "text": "What is the balance on account number 12345?",
+        "intent": "check_balance",
+        "entities": [
+            {
+                "start": 31,
+                "end": 38,
+                "value": "12345",
+                "entity": "account_number"
+            }
+        ]
+    },
+    {
+        "text": "What is the balance on account number 12345 for krishna dev?",
+        "intent": "check_balance",
+        "entities": [
+            {
+                "start": 31,
+                "end": 38,
+                "value": "12345",
+                "entity": "account_number"
+            },
+            {
+                "start": 44,
+                "end": 54,
+                "value": "krishna",
+                "entity": "name"
+            }
+        ]
+    },
+    {
+        "text": "My account number is 12345",
+        "intent": "check_balance",
+        "entities": [
+            {
+                "start": 19,
+                "end": 26,
+                "value": "12345",
+                "entity": "account_number"
+            }
+        ]
+    },
+    {
+        "text": "What is the balance on my account number 67890?",
+        "intent": "check_balance",
+        "entities": [
+            {
+                "start": 30,
+                "end": 37,
+                "value": "67890",
+                "entity": "account_number"
+            }
+        ]
+    }
+
+
+]}}

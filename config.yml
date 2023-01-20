@@ -1,0 +1,47 @@
+language: "en"
+
+pipeline:
+- name: "tensorflow_embedding"
+- name: "intent_classifier_tensorflow_embedding"
+- name: "ner_crf"
+
+data:
+  common_examples:
+  - text: "hi"
+    intent: "greet"
+  - text: "goodbye"
+    intent: "goodbye"
+  - text: "What is my account balance"
+    intent: "check_balance"
+  - text: "Can you tell me my account balance"
+    intent: "check_balance"
+  - text: "What is the balance on account number 12345"
+    intent: "check_balance"
+    entities:
+    - account_number: 12345
+  - text: "What is the balance on account number 12345 for John Smith"
+    intent: "check_balance"
+    entities:
+    - account_number: 12345
+    - name: John Smith
+
+# Configuration for the tensorflow_embedding pipeline
+#tensorflow_embedding:
+#  model_dir: "./models/tf_embedding"
+
+# Configuration for the intent classifier using tensorflow_embedding pipeline
+intent_classifier_tensorflow_embedding:
+  epochs: 100
+
+# Configuration for the ner_crf component
+ner_crf:
+  features:
+    - low
+    - title
+    - upper
+    - digit
+    - punct
+    - pattern
+  L1_reg: 0.1
+  L2_reg: 0.1
+  max_iterations: 50
